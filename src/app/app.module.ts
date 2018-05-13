@@ -7,6 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,8 +25,8 @@ import { HomePage } from '../pages/home/home';
   ],
   providers: [
     StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SplashScreen, TextToSpeech,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
