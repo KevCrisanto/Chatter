@@ -24,6 +24,8 @@ export class HomePage {
   }
 
   sendText() {
+    if (this.text.length == 0)
+      return;
 
     let message = this.text;
 
@@ -52,18 +54,32 @@ export class HomePage {
   }
 
   sendVoice() {
-
     window["ApiAIPlugin"].requestVoice({},
       (response) => {
-        this.tts.speak({
-          text: response.result.fulfillment.speech,
-          locale: "en-US",
-          rate: 1
+        this.ngZone.run(() => {
+          //let message = this.text;
+          this.messages.push({
+            text: response.result.resolvedQuery,
+            sender: "me"
+          });
+          this.content.scrollToBottom(200);
+          //this.text = "";
+
+          this.messages.push({
+            text: response.result.fulfillment.speech,
+            sender: "api"
+          });
+          this.content.scrollToBottom(200);
+
+          this.tts.speak({
+            text: response.result.fulfillment.speech,
+            locale: "en-US",
+            rate: 1
+          });
         })
       }, (error) => {
         alert(error)
       }
     )
   }
-
 }
