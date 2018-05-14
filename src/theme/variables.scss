@@ -1,4 +1,4 @@
-// Ionic Variables and Theming. For more info, please see:
+// Ionic Variables and Theming.
 // http://ionicframework.com/docs/theming/
 
 // Font path is used to include ionicons,
@@ -7,7 +7,7 @@ $font-path: "../assets/fonts";
 
 
 // The app direction is used to include
-// rtl styles in your app. For more info, please see:
+// rtl styles in your app.
 // http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
 
@@ -19,7 +19,6 @@ $app-direction: ltr;
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
 // the Sass variables found in Ionic's source scss files.
-// To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
@@ -44,21 +43,18 @@ $colors: (
 
 // App iOS Variables
 // --------------------------------------------------
-// iOS only Sass variables can go here
 
 
 
 
 // App Material Design Variables
 // --------------------------------------------------
-// Material Design only Sass variables can go here
 
 
 
 
 // App Windows Variables
 // --------------------------------------------------
-// Windows only Sass variables can go here
 
 
 
@@ -75,7 +71,7 @@ $colors: (
 
 // Ionicons
 // --------------------------------------------------
-// The premium icon font for Ionic. For more info, please see:
+// The premium icon font for Ionic.
 // http://ionicframework.com/docs/ionicons/
 
 @import "ionic.ionicons";
