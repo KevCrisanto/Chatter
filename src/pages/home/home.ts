@@ -16,6 +16,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public ngZone: NgZone, public tts: TextToSpeech) {
 
+    // Display initial message
     this.messages.push({
       text: "Hi, how can I help you?",
       sender: "api"
@@ -29,6 +30,7 @@ export class HomePage {
 
     let message = this.text;
 
+    // Display user's message
     this.messages.push({
       text: message,
       sender: 'me'
@@ -42,6 +44,7 @@ export class HomePage {
     }, (response) => {
 
       this.ngZone.run(() => {
+        // Display AI's response
         this.messages.push({
           text: response.result.fulfillment.speech,
           sender: "api"
@@ -57,20 +60,21 @@ export class HomePage {
     window["ApiAIPlugin"].requestVoice({},
       (response) => {
         this.ngZone.run(() => {
-          //let message = this.text;
+          // Display user's message
           this.messages.push({
             text: response.result.resolvedQuery,
             sender: "me"
           });
           this.content.scrollToBottom(200);
-          //this.text = "";
 
+          // Display AI's response
           this.messages.push({
             text: response.result.fulfillment.speech,
             sender: "api"
           });
           this.content.scrollToBottom(200);
 
+          // AI's voice response
           this.tts.speak({
             text: response.result.fulfillment.speech,
             locale: "en-US",
