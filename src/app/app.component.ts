@@ -23,14 +23,8 @@ export class MyApp {
 
       window["ApiAIPlugin"].init(
         {
-          clientAccessToken: "c66829bebb57406da609fb1bcebbb440",
+          clientAccessToken: /* insert your key */,
           lang: "en"
-        },
-        function (result) {
-          alert(result)
-        },
-        function (error) {
-          alert(error)
         }
       );
     });
