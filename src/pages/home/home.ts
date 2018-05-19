@@ -24,6 +24,7 @@ export class HomePage {
 
   }
 
+  // Function that handles text queries
   sendText() {
     if (this.text.length == 0)
       return;
@@ -56,6 +57,7 @@ export class HomePage {
     })
   }
 
+  // Function that handles voice queries
   sendVoice() {
     window["ApiAIPlugin"].requestVoice({},
       (response) => {
@@ -78,7 +80,7 @@ export class HomePage {
           this.tts.speak({
             text: response.result.fulfillment.speech,
             locale: "en-US",
-            rate: 1
+            rate: 1  // voice speed
           });
         })
       }, (error) => {
